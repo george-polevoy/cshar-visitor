@@ -9,8 +9,7 @@ public class ComputeVisitorTests
     public void ConstantGetValue(double expected)
     {
         AstExpression expression = new AstConstant(expected);
-        var visitor = new ComputeVisitor();
-        Assert.That(expression.GetValue(), Is.EqualTo(expected));
+        Assert.That(expression.Accept(new ComputeVisitor()), Is.EqualTo(expected));
     }
 
     [TestCase(1, 2, 4)]
@@ -25,7 +24,7 @@ public class ComputeVisitorTests
                 ),
                 new AstConstant(b));
 
-        Assert.That(expression.GetValue(), Is.EqualTo(expected));
+        Assert.That(expression.Accept(new ComputeVisitor()), Is.EqualTo(expected));
     }
 
     [TestCase(1, 2, 3)]
@@ -37,7 +36,7 @@ public class ComputeVisitorTests
                 new AstConstant(a),
                 new AstConstant(b));
 
-        Assert.That(expression.GetValue(), Is.EqualTo(expected));
+        Assert.That(expression.Accept(new ComputeVisitor()), Is.EqualTo(expected));
     }
 
     [TestCase(2, 4, 8)]
@@ -49,7 +48,7 @@ public class ComputeVisitorTests
                 new AstConstant(a),
                 new AstConstant(b));
 
-        Assert.That(expression.GetValue(), Is.EqualTo(expected));
+        Assert.That(expression.Accept(new ComputeVisitor()), Is.EqualTo(expected));
     }
 
     [TestCase(8, 2, 4)]
@@ -61,6 +60,6 @@ public class ComputeVisitorTests
                 new AstConstant(a),
                 new AstConstant(b));
 
-        Assert.That(expression.GetValue(), Is.EqualTo(expected));
+        Assert.That(expression.Accept(new ComputeVisitor()), Is.EqualTo(expected));
     }
 }
