@@ -17,6 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ast.operations\ast.operations.csproj" />
     <ProjectReference Include="..\ast\ast.csproj" />
   </ItemGroup>
 

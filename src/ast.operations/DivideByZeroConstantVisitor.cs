@@ -1,4 +1,4 @@
-namespace ast.tests;
+namespace ast.operations;
 
 public class DivideByZeroConstantVisitor : IAstExpressionVisitor<bool>
 {

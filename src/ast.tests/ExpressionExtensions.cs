@@ -1,3 +1,5 @@
+using ast.operations;
+
 namespace ast.tests;
 
 public static class ExpressionExtensions
